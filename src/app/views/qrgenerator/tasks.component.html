@@ -1,0 +1,44 @@
+<div class="animated fadeIn">
+    <div class="card">
+        <div class="card-header">
+            <i class="icon-drop"></i> Tasks
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card-body">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th>QR Code</th>
+                        <th>Driver</th>
+                        <th>Date Assigned</th>
+                        <th>Task</th>
+                        <th>Done</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                     
+                      <tr *ngFor="let tasks of _tasks">
+                        <td><qrcode [qrdata]="tasks._id" [size]="256" [level]="'M'"></qrcode></td>
+                        <td>{{tasks.driver}}</td>
+                        <td>{{tasks.dateCreated | date }}</td>
+                        <td>{{tasks.task }}</td>
+                        <td>{{tasks.isApproved}}</td>
+                      </tr>
+                      
+                    </tbody>
+                  </table>
+                  
+                </div>
+              
+            </div>
+            <!--/.col-->
+            
+          </div>
+          <!--/.row-->
+
+
+    </div>
+
+</div>
